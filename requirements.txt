@@ -1,0 +1,9 @@
+fastapi==0.95.2
+pydantic==1.10.13
+mangum==0.17.0
+pymongo
+passlib[bcrypt]
+python-jose
+email-validator
+python-dotenv
+razorpay
