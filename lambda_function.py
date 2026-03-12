@@ -2,7 +2,6 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from config import CORS_ORIGINS
 from routers import auth, users, minerals, ebooks, ratings, returns, payments
-from mangum import Mangum
 app = FastAPI(title="CreatorNexus API", version="1.0.0")
 
 # CORS Middleware
@@ -27,5 +26,6 @@ app.include_router(payments.router)
 async def health_check():
     return {"status": "healthy"}
 
-handler = Mangum(app)   
-
+if __name__ == "__main__":
+    import uvicorn
+    uvicorn.run(app, host="0.0.0.0", port=8000)
